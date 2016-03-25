@@ -8,6 +8,7 @@
   * If you've already created a virtual environment, `cd <vrfy-dir>`, the project directory, and start the virtual environment. Otherwise, skip to the Python3 Virtual Env section and then head back here.
   * `pip install -r requirements.txt` this command installs the python libs for this project 
     * a note about this: the version of django-grappelli that were's using is not what's currently distributed with `pip install django-grapelli`. Running that will give you the latest stable release compatible with Django 1.7. Since we're using Django 1.8 and there's a stable grappelli branch available, we're grabbing v.2.7.x right from github with:  `pip install git+https://github.com/sehmaschine/django-grappelli.git@stable/2.7.x`
+    * Also if you're on windows, you'll need to install a special version of psycopg2 at https://github.com/nwcell/psycopg2-windows
   * `npm install` this command installs the node modules required for this project (if you don't have node installed `brew install node`), check those out in package.json
   * `bower install` this command installs the bower components required for this project (if you don't have bower installed `npm install -g bower`), check those out in bower.json
   * `grunt` this command creates the files & folder necessary (e.g course/static/course)
