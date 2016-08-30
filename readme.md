@@ -20,27 +20,13 @@
 
 **Use these names in the settings file**
 
-### (meeting with adam 6.4.15)
-output from the test.py
-likely include a tools or utils.py file for test.py to use
-some message to the student
-data.csv or json object that gives tango info like number of attempts and date submitted
-data dump to the host server 
-
-return something like results.txt with fields like score, feedback
-to do: give adam and jim and eric a detailed desription of what needs to be in data.csv and results.txt 
-
-
-
 ------
-
 
 ### Running locally:
   * (if you don't have python3 installed, `brew install python3`. if you don't have homwebrew installed, do that.)
   * start postgres database should be something like `pg_ctl start -D /usr/local/var/postgres`, where `/usr/local/var/postgres` is the location of the database. 
   * In another tab/window `cd <vrfy-dir>` and start the virtual environment
   * `pip install -r requirements.txt` this command installs the python libs for this project 
-    * a note about this: the version of django-grappelli that were's using is not what's currently distributed with `pip install django-grapelli`. Running that will give you the latest stable release compatible with Django 1.7. Since we're using Django 1.8 and there's a stable grappelli branch available, we're grabbing v.2.7.x right from github with:  `pip install git+https://github.com/sehmaschine/django-grappelli.git@stable/2.7.x`
   * `npm install` this command installs the node modules required for this project (if you don't have node installed `brew install node`)
   * `bower install` this command installs the bower components required for this project (if you don't have bower installed `npm install -g bower`)
   * `python3 manage.py collectstatic` this collects static files from the static folders and the bower_components directories (as per vrfy/settings.py).
@@ -65,8 +51,8 @@ to do: give adam and jim and eric a detailed desription of what needs to be in d
   * `python3 manage.py createsuperuser`
 
 ###Getting Tango to work
-  * clone Tango to your machine (the dist_docker branch, commit `eb18878d49c0ca718fc994919ed08b92aa00a77b`, see [how to clone old commit](http://stackoverflow.com/questions/1655361/how-to-clone-an-old-git-commit-and-some-more-questions-about-git))
-  * Follow [their instructions](https://github.com/autolab/Tango/wiki/Tango-with-Docker) for getting Tango running with docker
+  * clone Tango to your machine
+  * Follow [their instructions](https://github.com/autolab/Tango/wiki/Set-up-Local-Docker-VMMS) for getting Tango running with docker
   * In `vrfy/settings.py` change `TANGO_ADDRESS` to the Tango server's address, `TANGO_KEY` to one of the keys for the server and `TANGO_COURSELAB_DIR` to the directory where Tango will store its courselabs
   * When you start the server you may want to use sudo, ie: `sudo python restful-tango/server.py` to make sure it has permission to edit the courselabs
 
