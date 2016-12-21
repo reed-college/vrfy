@@ -20,13 +20,5 @@
   * Also, celery (next step) will tell you if redis is not running
   
 ## Restart Celery
-  This is the most involved restart
-  * type `screen` and enter
-    * if you get a `Cannot open your terminal '/dev/pts/0'` then type `script /dev/null` and try again
-  * you should be in the vrfy home folder now, if not  `cd ~`
-  * `source py_env/bin/activate`
-  * `cd vrfy`
-  * `celery --app=vrfy.celery:app worker --loglevel=DEBUG`
-  * You'll want to monitor its output and try to submit a problem beacuase it will tell you if Tango or Redis are down.
-  * `ctrl-a d`
-  * logout and you're done!
+  * Make sure you're in the virtualenv and the vrfy project folder (the one that has `manage.py`)
+  * run `celery --app=vrfy.celery:app worker --loglevel=DEBUG --detach`
