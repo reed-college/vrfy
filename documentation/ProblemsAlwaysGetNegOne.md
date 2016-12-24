@@ -9,9 +9,9 @@
 ## Restart Tango
   * cd into `Tango` directorty in vrfy's home folder
   * `source bin/activate`
-  * `sh startTangoREST.sh`
+  * `python restful-tango/server.py`
   * If tango is already running, it will tell you in the log info.
-  * press `ctrl-c` If Tango is running, stop here.
+  * press `ctrl-z` and run `kill %1`. If Tango is running, stop here.
   * `sh startTangoREST.sh &`
   * `ctrl-c`. This will run the `startTangoREST.sh` in the background
   
