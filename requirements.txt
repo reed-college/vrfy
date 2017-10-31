@@ -22,7 +22,8 @@ Pygments==2.0.2
 pysftp==0.2.8
 pytz==2016.6.1
 redis==2.10.5
-requests==2.7.0
+requests>=2.18.4
 selenium==2.46.0
 six==1.9.0
 tornado==4.2
+-e git://github.com/reed-college/maxixe.git#egg=maxixe
