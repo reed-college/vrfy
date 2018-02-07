@@ -20,7 +20,7 @@
       <h4>Score: {{result.score}}{% if result.max_score %}/{{result.max_score}}{% endif %}</h4>
       {% if result.external_log %}
       <h4>Comments:</h4>
-      <ul class="list-group">
+      <ul class="list-group" style="font-family: monospace; font-size: 14px;">
       {% for msg in result.external_log %}
         <li class="list-group-item">{{ msg }}</li>
       {% endfor %}
