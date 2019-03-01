@@ -73,3 +73,12 @@ Starts an niginx webserver, keeps the process running, publishes the ports, uses
 
 ###Goals
 make sure there's markdown support for the problem statements
+
+----------
+
+### Notes on cs.reed.edu from the sysadmin side of things:
+ * Startup scripts for all the necessary cshw/vrfy services are under /etc/supervisor/conf.d/
+ * The main config file for Tango is /home/vrfy/Tango/config.py
+ * The main config files for cshw/vrfy are /home/vrfy/vrfy/vrfy/settings.py and /home/vrfy/vrfy/vrfy/settings_local.py. Any variable set in settings_local.py will supercede the one in settings.py
+ * Database backups are handled via a crontab entry for the vrfy user. It runs the following "/bin/sh $HOME/vrfy/scripts/backup.sh 2>&1 /dev/null". The entire virtualmachine also has weekly snapshots taken for disaster recovery if needed.
+ * All the grading scripts live under /home/vrfy/vrfy/problem_assets/SECTION_NAME/solutions/PROBLEM_NAME/
